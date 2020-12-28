@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #999;
+        }
+        .box{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变红" onclick="toRed()">
+    <div id="div1"></div>
+    <hr>
+    <button onclick="change()">改变值</button>
+    <input type="text" id="oTxt">
+    <hr>
+    <ul>
+        <li>html中怎么写，js中就怎么写：value、title、style.color（className除外）</li>
+    </ul>
+    <script>
+        function toRed(){
+            var oDiv = document.getElementById('div1');
+            oDiv.className = 'box'
+        }
+        function change(){
+            var oTxt = document.getElementById('oTxt'); 
+            oTxt.value = "wenmeichao";
+            oTxt.title = "hello"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="css1" rel="stylesheet" href="one.css">
+</head>
+
+<body>
+    <input type="button" value="按钮1" onclick="toSkin1()">
+    <input type="button" value="按钮2" onclick="toSkin2()">
+    <script>
+       function toSkin1(){
+           //无论你想操作的元素是什么，第一步就是先把它选出来，你不选出来它是不会听你的
+           var skin = document.getElementById('css1'); 
+           //任何标签都可以加 id，甚至 body 和 link，任何属性都可以修改，例如 href
+           skin.href = 'one.css'
+       }
+       function toSkin2(){
+           var skin = document.getElementById('css1');
+           skin.href = 'two.css'
+       }
+    </script>
+</body>
+
+</html>

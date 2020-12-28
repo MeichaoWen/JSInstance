@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" onmousemove="toRed()" onmouseout="togreen()"></div>
+    <hr>
+    <ol>
+        <li>
+            变量：就是给东西取了个别名
+        </li>
+        <li>
+            函数：我们可以把一些代码放到函数中（函数定义），在需要的地方直接调用（函数调用）
+        </li>
+    </ol>
+    <script>
+       function toRed(){
+           //变量：就是给东西取个别名
+           var oDiv = document.getElementById('box');
+           oDiv.style.width = '300px';
+           oDiv.style.height = '300px';
+           oDiv.style.background = 'red';
+       }
+       //函数的定义
+       function togreen(){
+           var oDiv = document.getElementById('box');
+           oDiv.style.width = '200px';
+           oDiv.style.height = '200px';
+           oDiv.style.background = 'green';
+       }
+       //函数只定义不调用不起作用，反之会报错 not defined
+       
+    </script>
+</body>
+
+</html>
