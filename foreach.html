@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var data = [{
+                id: '01',
+                value: 'wen'
+            },
+            {
+                id: '02',
+                value: 'mei',
+                children: [{
+                        id: '03',
+                        value: 'son'
+                    },
+                    {
+                        id: '04',
+                        value: 'girl'
+                    }
+                ]
+            }
+        ]
+        //index = 2
+        //data.splice(2, 1)
+        var i = -1;
+        data.forEach(function (value, index, array) {
+            i++
+            // console.log(value)
+            // console.log(index)
+            // console.log(array)
+            if (value.children) {
+                value.children.forEach(function (value, index, array) {
+                    i++
+                    if (i == 2) {
+                        console.log(value)
+                        console.log(index)
+                        console.log(array)
+                        array.splice(index,1)
+                    }
+
+                })
+            }
+
+        })
+        console.log(data)
+    </script>
+</body>
+
+</html>

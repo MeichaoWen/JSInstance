@@ -18,14 +18,15 @@
 <body>
     <input type="button" value="change" onclick="showHide()">
     <div id="box"></div>
+    <script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
     <script>
         function showHide() {
             var oDiv = document.getElementById('box');
             console.log(oDiv.style.display)
-            if (oDiv.style.display == "block") {
-                oDiv.style.display = "none"
-            } else {
+            if (oDiv.style.display == "" || oDiv.style.display == "none") {
                 oDiv.style.display = "block"
+            } else {
+                oDiv.style.display = "none"
             }
         }
     </script>

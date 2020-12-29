@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变红" onclick="setColor('red')">
+    <input type="button" value="变绿" onclick="setColor('green')">
+    <input type="button" value="变黑" onclick="setColor('black')">
+    <div id="div1"></div>
+    <hr>
+    <ol>
+        <li>函数的作用：省略重复代码，便于复用</li>
+        <li>参数：作用相当于占位符，不限制个数，具体的值只有当函数调用的时候才能够确定</li>
+        <li>参数使用场景：函数中有一些东西是不确定的时候 </li>
+    </ol>
+    <script>
+        function setColor(color){
+            var oDiv = document.getElementById('div1');
+            oDiv.style.background = color;
+        }
+    </script>
+</body>
+
+</html>

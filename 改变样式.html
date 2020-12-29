@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变宽" onclick="setStyle('width', '400px')">
+    <input type="button" value="变高" onclick="setStyle('height', '400px')">
+    <input type="button" value="变黑" onclick="setStyle('background', 'black')">
+    <div id="div1"></div>
+    <hr>
+    <ol>
+        <li>操作属性的两种方式：1、. 2、[]</li>
+        <li>操作属性的方式[]使用场景:操作的属性不固定，[]内可以是变量、参数或者字符串</li>
+        <li>变量和参数可以不加引号，其余必须加，否则会报错 not defined</li>
+    </ol>
+    <script>
+        function setStyle(name, value){
+            var oDiv = document.getElementById('div1');
+            oDiv.style[name] = value;
+            //操作属性的两种方式
+            //第一种
+            //oDiv.style.width   -> .
+            //第二种
+            //oDiv['style'].width -> []
+        }
+        alert(ii)
+    </script>
+</body>
+
+</html>
