@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">HELLO WORLD</div>
+    <hr>
+    <ol>
+        <li>window.onload 当页面加载完成时执行（相当于 jq 里的 ready 方法）</li>
+        <li>onclick 等事件也相当于元素的属性，当然可以用 js 来操作，只不过 onclick 的值是函数</li>
+        <li>函数有：匿名函数、命名函数</li>
+    </ol>
+    <script>
+        function diagio(){
+            alert('abc')
+        }
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            //方法一 匿名函数
+            // oDiv.onclick = function(){
+            //     alert(oDiv.innerHTML)
+            // }
+            //方法二 命名函数
+            oDiv.onclick = diagio
+        }
+    </script>
+</body>
+
+</html>

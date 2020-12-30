@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="全选">
+    <input type="button" id="btn2" value="不选">
+    <input type="button" id="btn3" value="反选">
+    <div id="div1">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+    <hr>
+    <ol>
+        <li>知识点1:循环事件的应用</li>
+        <li>知识点2:设置复选框选中</li>
+    </ol>
+    <script>
+        window.onload = function(){
+            var oBtn1 = document.getElementById('btn1')
+            var oBtn2 = document.getElementById('btn2')
+            var oBtn3 = document.getElementById('btn3')
+            var oDiv = document.getElementById('div1')
+            var oCh = oDiv.getElementsByTagName('input')
+            oBtn1.onclick = function(){
+                for(var i = 0; i < oCh.length; i++){
+                    oCh[i].checked = true
+                }
+            }
+            oBtn2.onclick = function(){
+                for(var i = 0; i < oCh.length; i++){
+                    oCh[i].checked = false
+                }
+            }
+            oBtn3.onclick = function(){
+                for(var i = 0; i < oCh.length; i++){
+                    if(oCh[i].checked == true){
+                        oCh[i].checked = false
+                    }else{
+                        oCh[i].checked = true
+                    }
+                    
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

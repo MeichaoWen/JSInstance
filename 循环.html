@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 div {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            margin: 10px;
+            float: left;
+        }
+        .div1{overflow: hidden;}
+
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <hr>
+    <ol>
+        <li>循环成立的四个条件：1、初始化2、条件3、语句4、自增</li>
+    </ol>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementsByTagName('div');
+            for (var i = 0; i < oDiv.length; i++) {
+                oDiv[i].style.background = 'red'
+            }
+        }
+    </script>
+</body>
+
+</html>
