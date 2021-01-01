@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 240px; display: flex; flex-wrap: wrap; align-items: center;}
+        #div1 div {
+            width: 60px;
+            height: 60px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 60px;
+            
+        }
+        #div1 .active{background: red;}
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div class="active">1月</div>
+        <div>2月</div>
+        <div>3月</div>
+        <div>4月</div>
+        <div>5月</div>
+        <div>6月</div>
+        <div>7月</div>
+        <div>8月</div>
+        <div>9月</div>
+        <div>10月</div>
+        <div>11月</div>
+        <div>12月</div>
+    </div>
+    <div id="div2">
+        <h1>1月运势</h1>
+        <p>一月宜～</p>
+    </div>
+    <hr>
+    <ol>
+        <li>字符串拼接：从左到右开始，（）可以提升优先级</li>
+        <li>变量的作用域：一个函数无法访问另一个函数中的变量</li>
+    </ol>
+    <script>
+        var list = ['一月宜～','二月宜～','三月宜～','四月宜～','五月宜～','六月宜～','七月宜～','八月宜～','九月宜～','十月宜～','十一月宜～','十二月宜～']
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2')
+            var aDiv = oDiv.getElementsByTagName('div');
+            for(var i = 0; i < aDiv.length; i++){
+                console.log(i)
+                aDiv[i].index = i;
+                aDiv[i].onmouseover = function(){
+                    console.log(i) //由于变量作用域的原因，i 为 undefined
+                    for(var i = 0; i < aDiv.length; i++){
+                        aDiv[i].className = ''
+                    }
+                    this.className = 'active';
+                    oDiv2.innerHTML = '<h1>' + (this.index + 1) + '月运势</h1><p>' + list[this.index] +'</p>'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

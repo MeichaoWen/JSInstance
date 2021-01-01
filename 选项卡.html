@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 div {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            display: none;
+        }
+        #div1 .active{background: yellow;}
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="button" value="教育" class="active">
+        <input type="button" value="留学">
+        <input type="button" value="出国">
+        <input type="button" value="课程">
+        <div style="display: block;">1111</div>
+        <div>2222</div>
+        <div>3333</div>
+        <div>4444</div>
+    </div>
+    <hr>
+    <ol>
+        <li>this: 当前发生事件的元素</li>
+        <li>在js里，给元素添加自定义属性</li>
+        <li>选项卡实现逻辑：先把所有 btn 的属性移除，然后给当前发生事件的元素添加样式，把所有 div 隐藏，将第 this.index 个显示</li>
+    </ol>
+    <script>
+        //var list
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var oBtn = oDiv.getElementsByTagName('input');
+            var aDiv = oDiv.getElementsByTagName('div');
+            for(var i = 0; i < oBtn.length; i++){
+                oBtn[i].index = i //给元素添加自定义属性
+                oBtn[i].onclick = function(){
+                    for(var i = 0; i < oBtn.length; i++){
+                        oBtn[i].className = ''
+                        aDiv[i].style.display = 'none'
+                    }
+                    this.className = 'active'
+                    console.log(this.index)
+                    aDiv[this.index].style.display = 'block'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
