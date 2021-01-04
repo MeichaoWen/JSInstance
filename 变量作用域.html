@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <hr>
+    <ol>
+        <li>事件：用户的操作</li>
+        <li>obj.style 属性操作</li>
+        <li>赋值 = </li>
+        <li>获取元素 document.getElementById</li>
+    </ol>
+<script>
+    var b = 5  //全局变量：在任何地方都可以用
+    function aaa(){
+        var a = 12;  //局部变量：只能在定义它的函数内部使用
+    }
+    function bbb(){
+        alert(a)  // a is not defined
+        alert(b)  //5
+    }
+    aaa()
+    bbb()
+</script>
+</body>
+
+</html>

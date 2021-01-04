@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+        <li>基本数据类型：number、string、boolean、function、object、undefined</li>
+        <li>变量的数据类型由它存放的值来决定</li>
+        <li>属性类型undefined：第一种情况是变量未定义，第二种情况变量定义后未赋值</li>
+    </ol>
+    <script>
+        window.onload = function(){
+            var a = 12;  //number
+            a = 'wenmeichao' //string
+            a = true;   //boolean
+            a = function(){} //function
+            a = document //object
+            var b; //undefined「未定义或者未赋值」
+            console.log(typeof a) 
+            console.log(typeof b) 
+        }
+    </script>
+</body>
+
+</html>

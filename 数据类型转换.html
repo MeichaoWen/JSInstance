@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt1">
+    <input type="text" id="txt2">
+    <input type="button" id="btn" value="求和">
+    <hr>
+    <ol>
+        <li>+ 的作用：1、字符串连接 2、两个值相加</li>
+        <li>paeseInt(): string 转 number，转整数</li>
+        <li>paeseFloat(): string 转 number,转小数</li>
+        <li>paeseInt()小特性：从左到由扫描字符串，遇到非数值跳出，并将找到的数值返回出去</li>
+        <li>任何数和NaN相加结果都是NaN</li>
+        <li>NaN和NaN不相等</li>
+        <li>isNaN 判断非数字</li>
+    </ol>
+    <script>
+        var a = '12' //12
+        a = '12px' //12
+        a = '123px56' //123
+        a = 'abc'  //NaN(not a number)
+        var b = 'def'
+        console.log(parseInt(a))
+        console.log(parseInt(b))
+        console.log(parseInt(a) == parseInt(b)) //false NaN和NaN不相等
+        console.log(parseInt(a) + 12) //NaN 任何数和NaN相加结果都是NaN
+        console.log(isNaN(parseInt(a))) //判断非数值
+        window.onload = function(){
+            var txt1 = document.getElementById('txt1')
+            var txt2 = document.getElementById('txt2')
+            var btn = document.getElementById('btn')
+            btn.onclick = function(){
+                var n1 = parseInt(txt1.value);
+                var n2 = parseInt(txt2.value);
+                if(isNaN(n1)){
+                    alert('第一个数非数字')
+                }else if(isNaN(n2)){
+                    alert('第二个数非数字')
+                }else{
+                    alert(parseInt(txt1.value) + parseInt(txt2.value))
+                }
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
