@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <hr>
+    <ol>
+        <li>oDiv.currentStyle.width：IE浏览</li>
+        <li>getComputedStyle(oDiv, false).width : 支持火狐、谷歌</li>
+    </ol>
+    <script>
+        function getStyle(obj, name) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[name] //IE浏览器
+            } else {
+                return getComputedStyle(obj, false)[name] //谷歌、火狐
+            }
+        }
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            if (oDiv.currentStyle) {
+                alert(oDiv.currentStyle.width) //IE浏览器
+            } else {
+                alert(getComputedStyle(oDiv, false).width) //谷歌、火狐
+            }
+        }
+    </script>
+</body>
+
+</html>
