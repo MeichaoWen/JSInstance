@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {float: left; margin: 10px;}
+        #div1 {width: 100px; height: 100px; background: red;}
+        #div2 {width: 300px; height: 600px; background: #ccc; display: none;}
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var timer = null;
+            oDiv1.onmouseover = function () {
+                oDiv2.style.display = 'block'
+                clearTimeout(timer)
+            }
+            oDiv1.onmouseout = function () {
+                timer = setTimeout(function () {
+                    oDiv2.style.display = 'none'
+                }, 500)
+
+            }
+            oDiv2.onmouseover = function () {
+                clearTimeout(timer)
+            }
+            oDiv2.onmouseout = function () {
+                timer = setTimeout(function () {
+                    oDiv2.style.display = 'none'
+                }, 500)
+            }
+        }
+        //优化版
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var timer = null;
+            oDiv2.onmouseover = oDiv1.onmouseover = function () {
+                oDiv2.style.display = 'block'
+                clearTimeout(timer)
+            }
+            oDiv2.onmouseout = oDiv1.onmouseout = function () {
+                timer = setTimeout(function () {
+                    oDiv2.style.display = 'none'
+                }, 500)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

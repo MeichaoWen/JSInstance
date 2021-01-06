@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-size: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <script>
+        window.onload = function () {
+            //补0
+            function toDou(n) {
+                if (n < 10) {
+                    return '0' + n
+                } else {
+                    return n
+                }
+            }
+
+            function tick() {
+                var oDiv = document.getElementById('div1')
+                var oDate = new Date();
+                var str = toDou(oDate.getHours()) + ":" + toDou(oDate.getMinutes()) + ":" + toDou(oDate
+                .getSeconds());
+                oDiv.innerHTML = str
+            }
+            setInterval(tick, 1000)
+            tick() //为了解决1s间隔
+        }
+    </script>
+</body>
+
+</html>

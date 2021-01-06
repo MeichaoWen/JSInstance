@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="开启" id="btn1">
+    <input type="button" value="关闭" id="btn2">
+    <hr>
+    <ol>
+        <li>setInterval: 间隔型定时器</li>
+        <li>clearInterval(): 用于关闭间隔型定时器</li>
+        <li>setTimeout: 延时型定时器，只执行一次</li>
+        <li>clearTimeout(): 用于关闭延时型定时器</li>
+        <li>setInterval() 函数的返回值 timer 是定时器本身，可用作 clearInterval() 函数的参数</li>
+    </ol>
+    <script>
+        window.onload = function () {
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var timer = null;
+            oBtn1.onclick = function () {
+                timer = setInterval(function () { //timer 的值为 setInterval() 的返回值
+                    alert('Hello World!')
+                }, 5000)
+                console.log(timer)
+            }
+            oBtn2.onclick = function () {
+                clearInterval(timer) // setInterval() 的返回值可用于关闭定时器
+            }
+        }
+    </script>
+</body>
+
+</html>
