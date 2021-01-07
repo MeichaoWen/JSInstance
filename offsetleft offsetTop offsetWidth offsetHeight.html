@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        div {margin: 100px; overflow: hidden;}
+        #div2 {width: 200px; height: 200px; background-color: #ccc;}
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="position: relative;">
+            <div id="div2">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div2')
+            function offset(obj) {
+                var leftToBody = obj.offsetLeft; //leftToBody = obj 的 offsetLeft 加上 所有定位父级的 offsetLeft
+                var TopToBody = obj.offsetTop;
+                var positionParent = obj.offsetParent;
+                while (positionParent) { //body.offsetParent = null，为假
+                    leftToBody += positionParent.offsetLeft;
+                    TopToBody += positionParent.offsetTop;
+                    positionParent = positionParent.offsetParent
+                }
+                return {
+                    left: leftToBody,
+                    top: TopToBody
+                }
+            }
+            console.log(offset(oDiv))
+        }
+    </script>
+</body>
+
+</html>
