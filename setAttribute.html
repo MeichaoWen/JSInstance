@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="点击" id="btn1">
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn1');
+            var otxt = document.getElementById('txt1');
+            oBtn.onclick = function(){
+                //otxt.value = 'hello world' //第一种方式 .
+                //otxt['value'] = 'hello you' //第二种方式 ['value']
+                otxt.setAttribute('title','hello my girl')  //第三种方式 
+                otxt.removeAttribute('value') //移除属性
+                otxt.getAttribute('value') //获取属性
+            }
+        }
+    </script>
+</body>
+
+</html>

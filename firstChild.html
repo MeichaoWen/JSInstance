@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li id="li1">2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        window.onload = function(){
+            var oUl = document.getElementById('ul1')
+            var oLi = document.getElementById('li1')
+            if(oUl.firstElementChild){
+                oUl.firstElementChild.style.background = 'red'
+            }else{
+                oUl.firstChild.style.background = 'red' //ie 低版本浏览器的用法
+            }
+            if(oUl.lastElementChild){
+                oUl.lastElementChild.style.background = 'green'
+            }else{
+                oUl.lastChild.style.background = 'green' //ie 低版本浏览器的用法
+            }
+            if(oLi.nextElementSibling){
+                oLi.nextElementSibling.style.background = 'yellow'
+            }else{
+                oLi.nextSibling.style.background = 'yellow' //ie 低版本浏览器的用法
+            }
+            if(oLi.previousElementSibling){
+                oLi.previousElementSibling.style.background = 'blue'
+            }else{
+                oLi.previousSibling.style.background = 'blue' //ie 低版本浏览器的用法
+            }
+        }
+    </script>
+</body>
+
+</html>

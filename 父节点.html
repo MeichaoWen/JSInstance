@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>122结合iii我了<a>删除</a></li>
+        <li>无我负人天凤455<a>删除</a></li>
+        <li>3从v是让人天太热<a>删除</a></li>
+        <li>455粉色是<a>删除</a></li>
+        <li>556割发代首个<a>删除</a></li>
+        <li>俄33额56<a>删除</a></li>
+    </ul>
+    <script>
+        window.onload = function(){
+            var aA = document.getElementsByTagName('a');
+            for(var i = 0; i < aA.length; i++){ 
+                aA[i].onclick = function(){
+                    this.parentNode.style.display = 'none'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

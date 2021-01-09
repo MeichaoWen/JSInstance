@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li><span></span></li>
+        <li></li>
+    </ul>
+    <hr>
+    <ol>
+        <li>childNodes：子节点的集合</li>
+        <li>子节点是被选元素的第一层标签,span标签不属于子节点</li>
+        <li>nodeType: 元素节点的nodeType为1，文本节点的nodeType为3</li>
+        <li></li>
+    </ol>
+    <script>
+        // window.onload = function(){
+        //     var oUl = document.getElementById('ul1');
+        //     for(var i = 0; i < oUl.childNodes.length; i++){ //oUl.childNodes.length 为5
+        //         if(oUl.childNodes[i].nodeType == '1'){ //选出元素节点
+        //             oUl.childNodes[i].style.background = 'red'
+        //         }
+        //     }
+        // }
+        window.onload = function(){
+            var oUl = document.getElementById('ul1');
+            for(var i = 0; i < oUl.children.length; i++){ //oUl.children 只包含元素节点，oUl.children.length 为2
+                    oUl.children[i].style.background = 'red'
+            }
+        }
+    </script>
+</body>
+
+</html>
