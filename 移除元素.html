@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>hjsioug<a href="javascript:;">删除</a></li>
+        <li>fssaaa<a href="javascript:;">删除</a></li>
+        <li>fddvfthc<a href="javascript:;">删除</a></li>
+        <li>gwsvgeex<a href="javascript:;">删除</a></li>
+    </ul>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var aA = oUl.getElementsByTagName('a');
+            for(var i = 0; i < aA.length; i++){
+                aA[i].onclick = function(){
+                    oUl.removeChild(this.parentNode) //removeChild a标签的父节点
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

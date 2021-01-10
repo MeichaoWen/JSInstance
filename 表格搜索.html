@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    姓名：<input type="text" id="name"><input type="button" value="搜索" id="btn"> 
+    <table border="1" id="table1" width="500">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>里斯</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Blue</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>blue</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>张昭仪</td>
+                <td>28</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        window.onload = function () {
+            var oTable = document.getElementById('table1');
+            var oName = document.getElementById('name')
+            var oBtn = document.getElementById('btn')
+            oBtn.onclick = function()
+            {
+                for(var i = 0; i < oTable.tBodies[0].rows.length; i++){ //循环每一行
+                    var oTd = oTable.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase()
+                    var oInp = oName.value.toLowerCase()
+                    //if(oTd == oInp){ //比较每一行的第二列和文本行的值是否相等
+                    //if(oInp.toLowerCase() == oTd.toLowerCase()){ //将值先转成小写，再进行比较, 或者全部转成大写 toUpperCase()
+                    if(oTd.search(oInp) != -1){ //字符串中的search()，如果包含返回字符的位置、不包含返回 -1
+                        oTable.tBodies[0].rows[i].style.background = 'red'
+                    }else{
+                        oTable.tBodies[0].rows[i].style.background = ''
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

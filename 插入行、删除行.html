@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <input type="text" id="age">
+    <input type="button" id="btn" value="添加">
+    <table border="1" id="table1" width="500">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        window.onload = function () {
+            var oTable = document.getElementById('table1'); //获取table
+            var oName = document.getElementById('name') //获取姓名文本框
+            var oAge = document.getElementById('age') //获取年龄文本框
+            var oBtn = document.getElementById('btn') //获取添加按钮
+            var id = oTable.tBodies[0].rows.length + 1; //将 id 的值作为全局变量保存，避免 id 重复
+            oBtn.onclick = function () {  
+                var oTr = document.createElement('tr') //创建 tr 元素
+                oTr.innerHTML = '<td>' + (id++) + '</td><td>' + oName.value + //给 tr 赋值
+                    '</td><td>' +
+                    oAge.value + '</td><td><a href="javascript:;">删除</a></td>'
+                oTr.getElementsByTagName('a')[0].onclick = function () {  // 给删除按钮设置点击时间
+                    oTable.tBodies[0].removeChild(this.parentNode.parentNode)
+                }
+                oTable.tBodies[0].appendChild(oTr)
+            }
+        }
+    </script>
+</body>
+
+</html>
