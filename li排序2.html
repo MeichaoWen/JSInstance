@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ul1 {
+            background: red;
+        }
+
+        #ul2 {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="排序" id="btn">
+    <ul id="ul1">
+        <li>23</li>
+        <li>35</li>
+        <li>11</li>
+        <li>8</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn')
+            var oUl1 = document.getElementById('ul1')
+            oBtn.onclick = function () {
+                var oLi = oUl1.getElementsByTagName('li');
+                //oLi.sort() oLi 是元素的集合，并不是 Array，sort 方法是数组特有的
+                var arr = []
+                for (var i = 0; i < oLi.length; i++) {
+                    arr[i] = oLi[i] //将所有 li 存放到数组中
+                }
+                arr.sort(function (li1, li2) { //排序 li 数组
+                    var n1 = li1.innerHTML     //比较函数：比较 li 里的innerHTML
+                    var n2 = li2.innerHTML
+                    return n1 - n2
+                })
+                for (var n = 0; n < arr.length; n++) {
+                    oUl1.appendChild(arr[n]) //然后将排序好的 li 依次 appendChild 到 ul 中
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

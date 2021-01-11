@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    姓名：<input type="text" id="name"><input type="button" value="搜索" id="btn"> 
+    姓名：<input type="text" id="name"><input type="button" value="搜索" id="btn">
     <table border="1" id="table1" width="500">
         <thead>
             <tr>
@@ -50,17 +50,18 @@
             var oTable = document.getElementById('table1');
             var oName = document.getElementById('name')
             var oBtn = document.getElementById('btn')
-            oBtn.onclick = function()
-            {
-                for(var i = 0; i < oTable.tBodies[0].rows.length; i++){ //循环每一行
+            oBtn.onclick = function () {
+                for (var i = 0; i < oTable.tBodies[0].rows.length; i++) { //循环每一行
                     var oTd = oTable.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase()
                     var oInp = oName.value.toLowerCase()
-                    var arr = oInp.split(' ')
-                    for()
-                    if(oTd.search(oInp) != -1){ //字符串中的search()，如果包含返回字符的位置、不包含返回 -1
-                        oTable.tBodies[0].rows[i].style.background = 'red'
-                    }else{
-                        oTable.tBodies[0].rows[i].style.background = ''
+                    var arr = oInp.split(' ') //将字符串分割成数组
+                    //oTable.tBodies[0].rows[i].style.background = '' //将所有行的背景颜色清空
+                    oTable.tBodies[0].rows[i].style.display = "none" 
+                    for (var j = 0; j < arr.length; j++) { //将数组里的每一个元素和比较列去对比
+                        if (oTd.search(arr[j]) != -1) { //字符串中的search()，如果包含返回字符的位置、不包含返回 -1
+                            //oTable.tBodies[0].rows[i].style.background = 'red'
+                            oTable.tBodies[0].rows[i].style.display = ""
+                        }
                     }
                 }
             }
