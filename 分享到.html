@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 200px; height: 200px; background-color: #ccc; position: absolute; top: 50px; left: -200px;}
+        #div1 span{width: 20px; line-height: 20px; background: red; position: absolute; right: -20px; top: 70px;}
+    </style>
+</head>
+
+<body>
+    <input type="button" value="开始运动" onclick="startMove()">
+    <div id="div1">
+        <span>分享到</span>
+    </div>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1')
+            oDiv.onmouseover = function(){
+                startMove(0)
+            }
+            oDiv.onmouseout = function(){
+                startMove(-200)
+            }
+        }
+        var timer = null //存放定时器的返回值，用于关闭定时器
+        function startMove(iTarget) {
+            var oDiv = document.getElementById('div1')
+            clearInterval(timer) //原则1、在开始运动之前，关闭已有定时器
+            timer = setInterval(function () {
+                var speed = 0
+                if(oDiv.offsetLeft > iTarget){ //通过目标位置和当前位置判断 speed 的正负
+                    speed = -10 //如果当前位置比目标位置大 speed 为负
+                }else{
+                    speed = 10 //反之为正
+                }
+                if (oDiv.offsetLeft == iTarget) {
+                    clearInterval(timer) //把运动和停止分开，避免 30ms 的运动bug
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px'
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>
