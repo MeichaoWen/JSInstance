@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 200px; height: 200px; background-color: #ccc; position: absolute; top: 50px; left: 0;}
+        #div2 {width: 1px; height: 200px; background-color: #000; position: absolute; top: 50px; left: 100px;}
+        #div3 {width: 1px; height: 200px; background-color: #000; position: absolute; top: 50px; left: 300px;}
+    </style>
+</head>
+
+<body>
+    <input type="button" value="开始运动" onclick="startMove(100)">
+    <div id="div1">
+        
+    </div>
+    <div id="div2">
+        
+    </div>
+    <div id="div3">
+        
+    </div>
+    <script>
+        var timer = null //存放定时器的返回值，用于关闭定时器
+        function startMove(iTarget) {
+            var oDiv = document.getElementById('div1')
+            clearInterval(timer) //原则1、在开始运动之前，关闭已有定时器
+            timer = setInterval(function () {
+                var speed = 0
+                if(oDiv.offsetLeft > iTarget){ //通过目标位置和当前位置判断 speed 的正负
+                    speed = -7 //如果当前位置比目标位置大 speed 为负
+                }else{
+                    speed = 7 //反之为正
+                }
+                if (Math.abs(iTarget - oDiv.offsetLeft) <= 7) { //目标位置和 offsetLeft 之间的间距小于 speed，就认为已达到目标位置
+                    clearInterval(timer)
+                    oDiv.style.left = iTarget + 'px' // 设置直接达到目标位置
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px'
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>
