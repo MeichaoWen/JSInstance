@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {width: 50px;height: 50px;background: red;margin: 20px;}
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        window.onload = function () {
+
+            var aDiv = document.getElementsByTagName('div')
+            for (var i = 0; i < aDiv.length; i++) {
+                aDiv[i].timer = null; //每个元素都有各自对应的定时器
+                aDiv[i].onmouseover = function () {
+                    startMove(this, '400')
+                }
+                aDiv[i].onmouseout = function () {
+                    startMove(this, '50')
+                }
+            }
+        }
+        function startMove(obj, iTarget) { //将元素作为参数传入
+            clearInterval(obj.timer) //移除该元素上的定时器
+            obj.timer = setInterval(function () {
+                var speed = (iTarget - obj.offsetWidth) / 6
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
+                if (obj.offsetWidth == iTarget) {
+                    clearInterval(obj.timer)
+                } else {
+                    obj.style.width = obj.offsetWidth + speed + 'px'
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>

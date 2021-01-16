@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {width: 150px;height: 150px;background: red;margin: 20px;float: left;opacity: 0.3;}
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        window.onload = function () {
+
+            var aDiv = document.getElementsByTagName('div')
+            for (var i = 0; i < aDiv.length; i++) {
+                aDiv[i].alpha = 30  //多元素运动中，所有的东西都不能公用，需要定义成元素的属性
+                aDiv[i].timer = null; //每个元素都有各自对应的定时器
+                aDiv[i].onmouseover = function () {
+                    startMove(this, 100)
+                }
+                aDiv[i].onmouseout = function () {
+                    startMove(this, 30)
+                }
+            }
+        }
+        function startMove(obj, iTarget) {
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                var speed = (iTarget - obj.alpha) / 3
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
+                if (obj.alpha == iTarget) {
+                    clearInterval(obj.timer)
+                } else {
+                    console.log(speed)
+                    obj.alpha = obj.alpha + speed
+                    obj.style.opacity = (obj.alpha) / 100
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>
