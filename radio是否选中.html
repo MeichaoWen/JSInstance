@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div>
+    <input type="radio" id="oCh" name="age" value="011" checked>
+    <input type="radio" id="oCh2" name="age" value="022">
+</div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+    <script>
+        //$('#oCh').removeAttr('checked')
+        //$('#oCh').prop('checked',false)
+    </script>
+<script>
+    var oCh = document.getElementById('oCh');
+    //console.log($('input[name="age"]').attr('checked'))
+    //console.log($('input[name="age"]:checked').length)
+    //$('input[name="age"]').eq(0).attr('checked','true')
+    //$('input[name="age"][value="022"]').attr('checked','true')
+    console.log(oCh.checked)
+</script>
+</body>
+
+</html>
