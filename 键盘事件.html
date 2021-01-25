@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+<script>
+    document.onkeydown = function (ev) {
+        var oEvent = ev || event
+        var oDiv = document.getElementById('div1')
+        if (oEvent.keyCode == 37) {
+            oDiv.style.left = oDiv.offsetLeft - 10 + 'px'
+        } else if (oEvent.keyCode == 39) {
+            oDiv.style.left = oDiv.offsetLeft + 10 + 'px'
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="input" id="txt1">
+    <textarea cols="40" rows="10" id="txt2"></textarea>
+<script>
+    window.onload = function(){
+        var oTxt1 = document.getElementById('txt1')
+        var oTxt2 = document.getElementById('txt2')
+        oTxt1.onkeydown = function(ev){
+            var oEvent = ev || event
+            if(oEvent.keyCode == 13 && oEvent.ctrlKey){
+                oTxt2.value += oTxt1.value+'\n'
+                oTxt1.value=''
+            }
+        }
+    }
+</script>
+</body>
+
+</html>
