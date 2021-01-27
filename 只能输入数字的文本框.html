@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 80px; height: 100px; background-color: #ccc; border: 1px solid #999; display: none; position: absolute;}
+        li{list-style: none;}
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt">
+<script>
+    window.onload = function(){
+        var oTxt = document.getElementById('txt')
+        oTxt.onkeydown = function(ev){
+            oEvent = ev || event
+            if(oEvent.keyCode != 8 && (oEvent.keyCode < 48 || oEvent.keyCode > 57)){ //如果按键不是0-9 并且 不是删除键
+                return false //阻止默认行为，不能输入
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

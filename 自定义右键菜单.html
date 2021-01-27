@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 80px; height: 100px; background-color: #ccc; border: 1px solid #999; display: none; position: absolute;}
+        li{list-style: none;}
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+            <li>ddd</li>
+        </ul>
+    </div>
+<script>
+    document.oncontextmenu = function (ev) { //点击鼠标右键
+        var oEvent = ev || event
+        var oDiv = document.getElementById('div1')
+        oDiv.style.display = 'block'
+        oDiv.style.left = oEvent.clientX + 'px' //菜单出现在鼠标点击的位置
+        oDiv.style.top = oEvent.clientY + 'px'
+        return false //阻止默认事件
+    }
+    document.onclick = function(){ //点击页面菜单消失
+        var oDiv = document.getElementById('div1')
+        oDiv.style.display = 'none'
+    }
+</script>
+</body>
+
+</html>

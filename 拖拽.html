@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1')
+            oDiv.onmousedown = function (ev) {
+                var oEvent = ev || event
+                var disX = 0
+                var disY = 0
+                disX = oEvent.clientX - oDiv.offsetLeft //将鼠标距离元素边距的位置作为拖拽的依据
+                disY = oEvent.clientY - oDiv.offsetTop
+                console.log(disX, disY)
+                document.onmousemove = function (ev) {
+                    var oEvent = ev || event //oEvent 涉及到变量作用域，以及事件本身
+                    console.log(oEvent.clientX)
+                    //alert(9)
+                    oDiv.style.left = oEvent.clientX - disX + 'px'
+                    oDiv.style.top = oEvent.clientY - disY + 'px'
+                }
+                document.onmouseup = function () { //将事件加到document上，解决了脱离可视区鼠标抬起无效的问题
+                    document.onmousemove = null
+                    document.onmouseup = null
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
