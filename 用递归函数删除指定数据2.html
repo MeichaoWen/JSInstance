@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+function getFilterArr(arr, tar) {
+    return arr.filter(function(item, i) {
+        if (item.children) {
+            item.children = getFilterArr(item.children, tar)
+        }
+        return item.uuId !== tar;
+    })
+}
+
+        var obj = [{
+                    uuId: 1,
+                    scope: "0",
+                    fieldName: "applyType",
+                    fieldType: "Array",
+                    fieldValue: null,
+                    fieldRule: null,
+                    parentId: 0,
+                    apiInfoId: null,
+                    otherId: null,
+                    children: [{
+                            uuId: 2,
+                            scope: true,
+                            fieldName: "sys111",
+                            fieldType: "String",
+                            fieldValue: null,
+                            fieldRule: null,
+                            parentId: 1,
+                            apiInfoId: null,
+                            otherId: null,
+                            children: [],
+                            $cellEdit: true,
+                        },
+                        {
+                            uuId: 3,
+                            scope: "0",
+                            fieldName: "sys2",
+                            fieldType: "String",
+                            fieldValue: null,
+                            fieldRule: null,
+                            parentId: 1,
+                            apiInfoId: null,
+                            otherId: null,
+                            children: [],
+                            $cellEdit: true,
+                        },
+                    ],
+                    $cellEdit: true,
+                },
+                {
+                    uuId: 4,
+                    scope: "0",
+                    fieldName: "requester",
+                    fieldType: "String",
+                    fieldValue: null,
+                    fieldRule: null,
+                    parentId: 0,
+                    apiInfoId: null,
+                    otherId: null,
+                    children: [],
+                    $cellEdit: true,
+                },
+                {
+                    uuId: 5,
+                    scope: "0",
+                    fieldName: "sysname",
+                    fieldType: "Object",
+                    fieldValue: null,
+                    fieldRule: null,
+                    parentId: 0,
+                    apiInfoId: null,
+                    otherId: null,
+                    children: [{
+                            uuId: 6,
+                            scope: "0",
+                            fieldName: "sysname2",
+                            fieldType: "Object",
+                            fieldValue: null,
+                            fieldRule: null,
+                            parentId: 5,
+                            apiInfoId: null,
+                            otherId: null,
+                            children: [{
+                                    uuId: 7,
+                                    scope: "0",
+                                    fieldName: "syscode",
+                                    fieldType: "String",
+                                    fieldValue: null,
+                                    fieldRule: null,
+                                    parentId: 6,
+                                    apiInfoId: null,
+                                    otherId: null,
+                                    children: [],
+                                    $cellEdit: true,
+                                },
+                                {
+                                    uuId: 8,
+                                    scope: "0",
+                                    fieldName: "sysmarks",
+                                    fieldType: "Array",
+                                    fieldValue: null,
+                                    fieldRule: null,
+                                    parentId: 6,
+                                    apiInfoId: null,
+                                    otherId: null,
+                                    children: [{
+                                            uuId: 9,
+                                            scope: "0",
+                                            fieldName: "dddd",
+                                            fieldType: "String",
+                                            fieldValue: null,
+                                            fieldRule: null,
+                                            parentId: 8,
+                                            apiInfoId: null,
+                                            otherId: null,
+                                            children: [],
+                                            $cellEdit: true,
+                                        },
+                                        {
+                                            uuId: 10,
+                                            scope: "0",
+                                            fieldName: "eeee",
+                                            fieldType: "String",
+                                            fieldValue: null,
+                                            fieldRule: null,
+                                            parentId: 8,
+                                            apiInfoId: null,
+                                            otherId: null,
+                                            children: [],
+                                            $cellEdit: true,
+                                        },
+                                    ],
+                                    $cellEdit: true,
+                                },
+                            ],
+                            $cellEdit: true,
+                        },
+                        {
+                            uuId: 11,
+                            scope: "0",
+                            fieldName: "sysname1",
+                            fieldType: "String",
+                            fieldValue: null,
+                            fieldRule: null,
+                            parentId: 5,
+                            apiInfoId: null,
+                            otherId: null,
+                            children: [],
+                            $cellEdit: true,
+                        },
+                    ],
+                    $cellEdit: true,
+                },
+                {
+                    uuId: 12,
+                    scope: "0",
+                    fieldName: "integrationMode",
+                    fieldType: "String",
+                    fieldValue: null,
+                    fieldRule: null,
+                    parentId: 0,
+                    apiInfoId: null,
+                    otherId: null,
+                    children: [],
+                    $cellEdit: true,
+                },
+                {
+                    uuId: 13,
+                    scope: "0",
+                    fieldName: "applySysName",
+                    fieldType: "String",
+                    fieldValue: null,
+                    fieldRule: null,
+                    parentId: 0,
+                    apiInfoId: null,
+                    otherId: null,
+                    children: [],
+                    $cellEdit: true,
+                },
+            ]
+            console.log(getFilterArr(obj, 3))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 20px; height: 20px; background-color: yellow; position: absolute;}
+        #parent{position: relative; width: 600px; height: 20px; background: #ccc; margin: 20px auto;}
+        #div2{background: green;}
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="div1"></div>
+    </div>
+   <div id="div2"></div>
+<script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div1')
+        var oDiv2 = document.getElementById('div2')
+        var oParent = document.getElementById('parent')
+        oDiv.onmousedown = function(ev){
+                var oEvent = ev || event
+                pox = oEvent.clientX - oDiv.offsetLeft
+            document.onmousemove = function(ev){
+                var oEvent = ev || event
+                var l = oEvent.clientX - pox
+                if(l < 0){
+                    l = 0
+                }else if(l > oParent.offsetWidth - oDiv.offsetWidth){
+                    l = oParent.offsetWidth - oDiv.offsetWidth
+                }
+                var scale = l / (oParent.offsetWidth - oDiv.offsetWidth) //移动距离 / 可移动总长度
+                document.title = scale
+                oDiv.style.left = l + 'px'
+                oDiv2.style.width = 400 * scale + 'px'
+                oDiv2.style.height = 400 * scale + 'px'
+                oDiv2.style.opacity = scale
+            }
+            document.onmouseup = function(){
+                document.onmousemove= null
+                document.onmouseup = null
+            }
+            return false;
+        }
+    }
+</script>
+</body>
+
+</html>

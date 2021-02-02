@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {width: 100px; height: 100px; background-color: yellow; position: absolute;}
+        .box{border: 1px solid #000; position: absolute;}
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+<script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div1')
+        oDiv.onmousedown = function(ev){
+                var oEvent = ev || event
+                var oBox = document.createElement('div') //创建一个div
+                oBox.style.width = oDiv.offsetWidth + 'px' //div的大小、位置和将要移动的元素一致
+                oBox.style.height = oDiv.offsetHeight + 'px'
+                oBox.style.left = oDiv.offsetLeft + 'px'
+                oBox.style.top = oDiv.offsetTop + 'px'
+                oBox.className = 'box'
+                document.body.appendChild(oBox) //将创建的 div 添加到页面上
+                pox = oEvent.clientX - oDiv.offsetLeft
+                poy = oEvent.clientY - oDiv.offsetTop
+            document.onmousemove = function(ev){
+                var oEvent = ev || event //实际上拖动的是创建的元素
+                oBox.style.left = oEvent.clientX - pox + 'px'
+                oBox.style.top = oEvent.clientY - poy + 'px'
+            }
+            document.onmouseup = function(){
+                oDiv.style.left = oBox.offsetLeft +  'px'
+                oDiv.style.top = oBox.offsetTop + 'px'
+                document.body.removeChild(oBox) //元素拖动到位置后，将创建的元素移除
+                document.onmousemove= null
+                document.onmouseup = null
+            }
+            return false; //解决浏览器默认事件的bug
+        }
+    }
+</script>
+</body>
+
+</html>
