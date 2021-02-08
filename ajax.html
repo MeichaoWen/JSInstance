@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <input type="button" value="读取" id="btn">
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn')
+        oBtn.onclick = function(){
+            ajax('aaa.txt?t=' + Date.now(), function(data){
+                var arr = eval(data) //eval 可以计算某个字符串
+                alert(arr[1])
+            }, function(){
+                alert('失败')
+            })
+        }
+    }
+</script>
+</body>
+
+</html>

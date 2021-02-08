@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajaxNew.js"></script>
+</head>
+
+<body>
+    <input type="button" value="读取" id="btn">
+    <hr>
+    <ol>
+        <li>0 (为初始化)还没有调用open()方法</li>
+        <li>1 (载入)已调用send()方法，正在发送请求</li>
+        <li>2 (载入完成)send()方法完成，已收到全部响应内容</li>
+        <li>3 (解析)正在解析响应内容</li>
+        <li>4 (完成)响应内容解析完成，可以在客户端调用了</li>
+    </ol>
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn')
+        oBtn.onclick = function(){
+            ajax('aaa.txt?t=' + Date.now(), function(data){
+                alert(data)
+            })
+        }
+    }
+</script>
+</body>
+
+</html>
