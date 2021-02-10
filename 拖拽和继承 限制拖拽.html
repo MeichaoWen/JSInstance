@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="drag.js"></script>
+    <script src="LimitDrag.js"></script>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+        }
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: green;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">得到的</div>
+    <div id="div2">事实上</div>
+    <script>
+    window.onload = function(){
+        new Drag('div1')
+        new LimitDrag('div2')
+    }
+    </script>
+</body>
+
+</html>

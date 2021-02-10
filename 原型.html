@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    var arr = new Array(10,20,30,40)
+    var arr2 = new Array(10,20,30)
+    //arr.sum = function(){    //相当于行间样式，给对象加东西一次只对一个对象起作用
+        Array.prototype.sum = function(){  //这是 js 里的原型，可以一次给一组对象加东西
+        var result = 0
+        for(var i = 0; i < this.length; i++){
+            result = result + this[i]
+        }
+        return result
+    }
+    alert(arr.sum())
+    alert(arr2.sum())
+</script>
+</body>
+
+</html>

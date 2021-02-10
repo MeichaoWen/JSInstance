@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            background: #fff;
+        }
+
+        input.active {
+            background: green;
+        }
+
+        #div1 div {
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="button" value="aaa" class="active">
+        <input type="button" value="bbb">
+        <input type="button" value="bbb">
+        <div style="display: block;">aaajsjj</div>
+        <div>22ddef</div>
+        <div>33dddgas</div>
+    </div>
+    <hr>
+    <h3>将面向过程的程序改写成面对对象的程序</h3>
+    <ol>
+        <li>第一步：不能让函数有嵌套</li>
+        <li>onload 函数改成 构造函数</li>
+        <li>变量 改成 属性</li>
+        <li>函数 改成 方法</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+<script>
+    window.onload = function(){
+        new TabSwitch('div1')
+    }
+    function TabSwitch(id) {
+        var oDiv = document.getElementById(id)
+        this.aBtn = oDiv.getElementsByTagName('input')
+        this.aDiv = oDiv.getElementsByTagName('div')
+        var _this = this
+        for (var i = 0; i < this.aBtn.length; i++) {
+            this.aBtn[i].index = i
+            this.aBtn[i].onclick = function(){
+                _this.fnClick(this) //this指定问题，this表示属于哪个对象
+            }
+        }
+    }
+    TabSwitch.prototype.fnClick = function(oBtn){
+        for (var i = 0; i < this.aBtn.length; i++) {
+            this.aBtn[i].className = ''
+            this.aDiv[i].style.display = 'none'
+        }
+        oBtn.className = 'active'
+        this.aDiv[oBtn.index].style.display = 'block'
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function A() {
+        this.abc = 'wen'
+    }
+    A.prototype.show = function () {
+        alert(this.abc)
+    }
+
+    function B() {
+        A.call(this) //this 指向 new B()
+    }
+    //B.prototype = A.prototype //错误用法，因为对象是 引用类型，会相互影响
+    for(var i in A.prototype){
+        B.prototype[i] = A.prototype[i]
+    }
+    B.prototype.fn = function () {
+        alert('abc')
+    }
+    var objA = new A()
+    var objB = new B()
+    objB.show() //wen
+    objB.fn() //abc
+    objA.fn() //objA.fn is not a function
+    </script>
+</body>
+
+</html>

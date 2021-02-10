@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    function CreatePerson(name, age) {
+        this.name = name //构造函数里加属性
+        this.age = age
+    }
+    CreatePerson.prototype.showName = function () { //原型里加方法
+        alert(this.name)
+    }
+    CreatePerson.prototype.showAge = function () {
+        alert(this.age)
+    }
+    var obj = new CreatePerson('wen', 32)
+    var obj2 = new CreatePerson('wen2', 322)
+    alert(obj.showName == obj2.showName) //通过原型方式，避免了工厂方式函数重复，占用空间的问题
+</script>
+</body>
+
+</html>
