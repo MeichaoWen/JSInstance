@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea rows="10" cols="40" id="txt1"></textarea>
+    <input type="button" value="运行代码" id="btn1">
+    <script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn1')
+        var oTxt = document.getElementById('txt1')
+        oBtn.onclick = function(){
+            var oWin = window.open("about:blank","_blank")
+            oWin.document.write(oTxt.value)
+        }
+    }
+    </script>
+</body>
+
+</html>

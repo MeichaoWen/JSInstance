@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    // document.cookie = "name='wen'" // = 表示添加
+    var oDate = new Date()
+    oDate.setDate(oDate.getDate() + 8)
+    document.cookie = "pass='123';  expires=" + oDate //设置cookie数据和失效日期
+    alert(document.cookie)
+</script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击" id="btn1">
+    <script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn1')
+        oBtn.onclick = function(){
+            alert('宽：' + document.documentElement.clientWidth + '\n高：' + document.documentElement.clientHeight)
+        }
+        
+    }
+    </script>
+</body>
+
+</html>

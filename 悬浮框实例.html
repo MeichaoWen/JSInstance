@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1   {width: 200px; height: 200px; background: red; position: absolute; right: 0; bottom: 0;}
+    </style>
+</head>
+
+<body style="height: 2000px;">
+    <div id="div1"></div>
+    <script>
+    window.onscroll = window.onresize = function(){
+        var scrollTop = document.documentElement.scrollTop
+        var oDiv = document.getElementById('div1')
+        oDiv.style.top = document.documentElement.clientHeight - oDiv.offsetHeight + scrollTop + 'px'
+    }
+    </script>
+</body>
+
+</html>
