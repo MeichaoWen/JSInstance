@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt1">
+    <input type="button" id="btn" value="过滤">
+    <script>
+        var oTxt = document.getElementById('txt1')
+        var oBtn = document.getElementById('btn')
+        oBtn.onclick = function(){
+            var re = /日本|中国/g //过滤词不需要加引号
+            oTxt.value = oTxt.value.replace(re, '***')
+        }
+    </script>
+</body>
+
+</html>

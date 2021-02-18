@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var str = '33 uu8798 i09 ij--879pp 99'
+    var tmp = ''
+    var arr = []
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) > 0 && str.charAt(i) <= '9') {
+            tmp += str.charAt(i)
+        } else {
+            if (tmp) {
+                arr.push(tmp)
+                tmp = ''
+            }
+        }
+    }
+    if (tmp) {
+        arr.push(tmp)
+        tmp = ''
+    }
+    alert(arr)
+    </script>
+</body>
+
+</html>

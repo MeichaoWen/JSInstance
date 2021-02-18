@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <input type="button" id="btn" value="校验">
+    <script>
+        window.onload = function()
+        {
+            var oTxt = document.getElementById('txt')
+            var oBtn = document.getElementById('btn')
+            oBtn.onclick = function(){
+                var re = /\w+@[0-9a-z]+.[a-z]+$/g
+                if(re.test(oTxt.value)){
+                    alert('符合邮箱格式')
+                }else{
+                    alert('不符合邮箱格式')
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

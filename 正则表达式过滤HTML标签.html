@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="txt1" rows="20" cols="50"></textarea>
+    <input type="button" value="过滤" id="btn">
+    <script>
+        var oBtn = document.getElementById('btn')
+        var oTxt = document.getElementById('txt1')
+        oBtn.onclick = function(){
+            //var re = /<.+>/g //表示<>内有若干个任意字符
+            var re = /<[^<>]+>/g //表示<>内有若干个除了<>的字符
+            oTxt.value = oTxt.value.replace(re, '')
+        }
+    </script>
+</body>
+
+</html>
