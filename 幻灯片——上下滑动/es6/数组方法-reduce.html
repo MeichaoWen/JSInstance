@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    let arr = [59,60,89,40]
+    let result = arr.reduce(function(totle, item, index, args){
+        console.log(totle, item, index, args) //相加中间值、当前值、当前次数、数组本身
+        return totle + item
+    })
+    console.log(result) //248
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>参数的扩展</h2>
+    <script>
+    function show(a, b, ...args, c){
+        console.log(a) // 3
+        console.log(b) // 4
+        console.log(args) // [5, 7, 8]
+    }
+    show(3,4,5,7,8)
+    </script>
+</body>
+
+</html>

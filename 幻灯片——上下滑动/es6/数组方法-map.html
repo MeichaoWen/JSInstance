@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    let arr = [10,20,30,40]  
+    let newArr = arr.map((item, index, args) => { //当前元素、位置、原始数组本身
+        console.log(item, index, args) //会执行 arr.length 次
+        return item * 2
+    })
+    console.log(newArr) //[20, 40, 60, 80]
+    </script>
+</body>
+
+</html>

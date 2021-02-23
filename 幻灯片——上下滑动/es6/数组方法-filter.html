@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    let arr = [13, 28, 87, 65, 99, 9]
+    let result = arr.filter(function(item, index, args){
+        console.log(item, index, args) //当前元素、元素位置、原始数组
+        return item % 3 == 0
+    })
+    console.log(result) //[87,99,9]
+    </script>
+</body>
+
+</html>

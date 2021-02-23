@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    let arr = [
+        {name: '男鞋', price: 200},
+        {name: '女鞋', price: 18700},
+        {name: '男包', price: 100},
+        {name: '女包', price: 20000},
+    ]
+    let result = arr.filter(item => item.price > 10000)
+    console.log(result) //[{name: "女鞋", price: 18700},{name: "女包", price: 20000}]
+    </script>
+</body>
+
+</html>
