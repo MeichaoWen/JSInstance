@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function show(name, age) {
+            this.name = name
+            this.age = age
+        }
+        show.prototype.showNane = function () {
+            alert(this.name)
+        }
+        show.prototype.showAge = function () {
+            alert(this.age)
+        }
+
+    function vipShow(name, age, level) {
+        show.call(this, name, age)
+        this.level = level
+    }
+    vipShow.prototype = new show()
+    vipShow.prototype.constructor = vipShow
+    vipShow.prototype.showLevel = function () {
+        alert(this.level)
+    }
+    var fn = new vipShow('wen', 28, 3)
+    fn.showAge()
+    fn.showNane()
+    fn.showLevel()
+    </script>
+</body>
+
+</html>

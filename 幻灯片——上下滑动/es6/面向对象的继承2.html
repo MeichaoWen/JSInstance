@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    class show{
+        constructor(name, age){
+            this.name = name
+            this.age = age
+        }
+        showNane(){
+            alert(this.name)
+        }
+        showAge(){
+            alert(this.age)
+        }
+    }
+    class vipShow extends show{
+        constructor(name, age, level){
+            super(name, age)
+            this.level = level
+        }
+        showLevel(){
+            alert(this.level)
+        }
+    }
+    let fn = new vipShow('wen', 28, 3)
+    fn.showAge()
+    fn.showNane()
+    fn.showLevel()
+    </script>
+</body>
+
+</html>
