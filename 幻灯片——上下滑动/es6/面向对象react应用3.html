@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.js"></script>
+    <script type="text/babel">
+    class Item extends React.Component{
+        constructor(...args){
+            super(...args)
+        }
+        render(){
+            return <li>{this.props.str}</li> 
+        }
+    }
+    class List extends React.Component{
+        constructor(...args){
+            super(...args)
+        }
+        render(){
+            //let aItems = this.props.arr.map(a=><Item str={a}></Item>)
+            return <ul>{this.props.arr.map(a=><Item str={a}></Item>)}</ul>
+        }
+    }
+    window.onload = function(){
+        let oDiv = document.getElementById('div1')
+        ReactDOM.render(
+            <List arr={[0,1,2,3]}></List>,
+            oDiv
+        )
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

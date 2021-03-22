@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.js"></script>
+    <script type="text/babel">
+        class Text extends React.Component{ //继承自 React.Component
+            constructor(...args){ //将参数收集起来
+                super(...args) //将所有参数继承并展开
+            }
+            render(){ //render方法是必须的
+                return <span>abcD</span>
+            }
+        }
+        window.onload = function(){
+            let oDiv = document.getElementById('div1')
+            ReactDOM.render( //渲染
+                <Text></Text>,
+                oDiv
+            )
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

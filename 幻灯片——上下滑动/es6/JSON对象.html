@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // let abc = {a: 12, b: 5}
+    // alert(abc) //[object Object]
+    // let url = 'www.baidu.com?data=' + encodeURIComponent(JSON.stringify(abc))
+    // //encodeURIComponent函数，可以把字符串作为URI组件进行编码
+    // alert(url)
+
+    let str = `{
+        "a":"123",
+        "b": 12,
+        "c":{
+            "c1":"456",
+            "c2":13
+        }
+    }` //JSON必须是标准写法
+    console.log(JSON.parse(str))
+    </script>
+</body>
+
+</html>

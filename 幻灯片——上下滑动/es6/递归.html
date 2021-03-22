@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+            title: '01',
+            key: "001",
+            children: [{
+                title: '02',
+                key: "002",
+                children: [{
+                    title: '03',
+                    key: "003",
+                    children: []
+                }]
+            }]
+        }]
+
+        function fn(data) {
+            for (var i in data) {
+                if(data[i].children){
+                    fn(data[i])
+                }
+                console.log(data[i])
+            }
+        }
+
+        //fn(data)    
+
+        fn(data)
+    </script>
+</body>
+
+</html>

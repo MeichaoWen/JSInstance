@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function randomCoding(num) {
+            var result = [];
+            let n = num;
+            for (var i = 0; i < n; i++) {
+                var ranNum = Math.ceil(Math.random() * 25);
+                result.push(String.fromCharCode(65 + ranNum));
+            }
+            return result.join('');
+        }
+        console.log(randomCoding())
+    </script>
+</body>
+
+</html>
