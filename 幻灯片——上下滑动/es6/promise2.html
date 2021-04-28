@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <script>
+    function creatPromise(url) {
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                url, //url:url 可以省略一个
+                dataType: 'json',
+                success(arr) {
+                    resolve(arr)
+                },
+                error(err) {
+                    reject(err)
+                }
+            })
+        })
+    }
+    Promise.all([
+        creatPromise('data.txt'),
+        creatPromise('data2.txt')
+    ]).then(function (result) {
+        alert('全部成功') //返回值resul是个数组
+        let [arr, json] = result //解构赋值
+        console.log(arr)
+        console.log(json)
+    }, function (err) {
+        console.log(err)
+    })
+    </script>
+    <ol>
+        <li>用同步一样的方式，来书写异步代码</li>
+
+    </ol>
+</body>
+
+</html>

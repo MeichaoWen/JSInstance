@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <script>
+    Promise.all([
+        $.ajax({url:'data.txt', dataType: 'json'}),
+        $.ajax({url:'data2.txt', dataType: 'json'}),
+    ]).then(result => console.log(result), err => console.log(err))
+    </script>
+    <ol>
+        <li>用同步一样的方式，来书写异步代码</li>
+
+    </ol>
+</body>
+
+</html>

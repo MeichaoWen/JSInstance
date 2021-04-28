@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="jquery.js"></script>
 </head>
 
 <body>
     <script>
-    let {a,b} = {a:10,b:20}
-    console.log(a,b)
-    console.log(JSON.stringify(['102','104','105','106']))
+    let obj = {
+        a:"123",
+        b:"456"
+    }
+    let b={obj2:obj}
+    console.log(...b)
     </script>
+    <ol>
+        <li>用同步一样的方式，来书写异步代码</li>
+
+    </ol>
 </body>
 
 </html>

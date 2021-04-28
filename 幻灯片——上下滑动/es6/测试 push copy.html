@@ -8,10 +8,15 @@
 </head>
 
 <body>
+    <h2>参数的扩展</h2>
     <script>
-    let {a,b} = {a:10,b:20}
-    console.log(a,b)
-    console.log(JSON.stringify(['102','104','105','106']))
+    var arr = [1, 2, 3];
+var obj = {};
+arr.forEach((val, key) => {
+    obj["arr["+key+"]"] = val;
+    
+})
+console.log(obj)
     </script>
 </body>
 

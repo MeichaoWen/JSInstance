@@ -8,10 +8,11 @@
 </head>
 
 <body>
+    <h2>参数的扩展</h2>
     <script>
-    let {a,b} = {a:10,b:20}
-    console.log(a,b)
-    console.log(JSON.stringify(['102','104','105','106']))
+        var str="1 plus 2 equal 3"
+        var n = str.match(/\d+/g)
+        console.log(n)
     </script>
 </body>
 

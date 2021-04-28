@@ -10,39 +10,38 @@
 
 <body>
     <script>
-        let p = new Promise(function(resolve, reject){
-            $.ajax({
-                url: 'data.txt',
-                dataType: 'json',
-                success(arr){
-                    resolve(arr)
-                },
-                error(err){
-                    reject(err)
-                }
-            })
-
+    let p1 = new Promise(function (resolve, reject) {
+        $.ajax({
+            url: 'data.txt',
+            dataType: 'json',
+            success(arr) {
+                resolve(arr)
+            },
+            error(err) {
+                reject(err)
+            }
         })
-        let p2 = new Promise(function(resolve, reject){
-            $.ajax({
-                url: 'data2.txt',
-                dataType: 'json',
-                success(arr){
-                    resolve(arr)
-                },
-                error(err){
-                    reject(err)
-                }
-            })
-
+    })
+    let p2 = new Promise(function (resolve, reject) {
+        $.ajax({
+            url: 'data2.txt',
+            dataType: 'json',
+            success(arr) {
+                resolve(arr)
+            },
+            error(err) {
+                reject(err)
+            }
         })
-        p.then(function(arr){
-            alert('成功'+ arr)
-            p2.then(function(){}, function(){})
-        },function(err){
-            alert('失败')
-            console.log(JSON.stringify(err))
-        })
+    })
+    Promise.all([p1,p2]).then(function(result){
+        alert('全部成功') //返回值resul是个数组
+        let [arr, json] = result //解构赋值
+        console.log(arr)
+        console.log(json)
+    }, function(err){
+        console.log(err)
+    })
     </script>
     <ol>
         <li>用同步一样的方式，来书写异步代码</li>
